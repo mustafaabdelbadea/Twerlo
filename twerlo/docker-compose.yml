@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  server:
+    build: ./server
+    container_name: server-container
+    ports:
+      - "8080:8080"
+    env_file:
+      - ./server/.env.development
+    command: npm run dev
+  client:
+    build: ./client
+    container_name: client-container
+    ports:
+      - "4200:4200"
+    command: npm start
