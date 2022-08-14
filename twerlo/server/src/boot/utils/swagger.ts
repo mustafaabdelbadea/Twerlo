@@ -13,7 +13,7 @@ const swaggerOptions: swaggerJSDoc.Options = {
       version: "1.0.0",
     }
   },
-  apis: ["./src/app/services/*.ts", "./src/app/apis/*.ts", "./src/app/apis/rest/v1/*.ts", "./src/app/apis/rest/v1/swagger/*.yml"],
+  apis: ["./src/app/apis/rest/v1/swagger/*.yml"],
 };
 
 const swaggerSpec = swaggerJSDoc(swaggerOptions);
