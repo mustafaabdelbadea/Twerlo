@@ -1,0 +1,34 @@
+tags:
+  name: Test
+  description: The test api
+
+paths: 
+  /v1/rank:
+    post:
+      description: To get the rank
+      tags: [Test]
+      parameters:
+        - name: body
+          in: body
+          schema:
+            type: object
+            required: 
+              - score
+            properties: 
+              score:
+                type: number
+                description: the score of student
+      responses:
+        200:
+          description: return rank
+          content: 
+            application/json:
+              schema:
+                type: object
+                properties:
+                  rank:
+                    type: number
+        400:
+          description: No score provided, bad request
+          content: 
+            application/text

@@ -1,6 +1,5 @@
 import * as boot from "./boot";
 import * as apis from "./app/apis";
-
 // Start all services
 async function start() {
     try {
