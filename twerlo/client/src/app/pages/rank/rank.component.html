@@ -1,6 +1,18 @@
 
 <div class="page-container">
   <div class="container pt-5">
-    <p-chart type="pie"  [style]="{'width': '40%'}"></p-chart>
+    <p-card>
+      <ng-template pTemplate="header" >
+        <div class="d-flex justify-content-between p-4">
+          <div>
+            <h4>Rank</h4>
+          </div>
+          <div>
+            <button pButton pRipple type="button" label="Try Again" class="p-button-outlined p-button-secondary" routerLink="/practice"></button>
+          </div>
+        </div>
+      </ng-template>
+      <p-chart type="pie" [data]="data"  [style]="{width: '20%', height: '20%'}"></p-chart>
+</p-card>
   </div>
 </div>

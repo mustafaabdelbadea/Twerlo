@@ -17,6 +17,7 @@ import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import {ChartModule} from 'primeng/chart';
 import {ButtonModule} from 'primeng/button';
+import {ToastModule} from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {ButtonModule} from 'primeng/button';
     MessageModule,
     MessagesModule,
     ChartModule,
-    ButtonModule
+    ButtonModule,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

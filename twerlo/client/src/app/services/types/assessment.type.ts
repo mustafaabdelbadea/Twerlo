@@ -18,3 +18,8 @@ export interface CheckedWord extends word {
 export interface rankOutput {
   rank: number
 }
+
+
+export interface rankInputs {
+  score: number
+}

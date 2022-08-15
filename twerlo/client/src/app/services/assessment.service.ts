@@ -1,4 +1,4 @@
-import { rankOutput, word, wordOutput } from './types/assessment.type';
+import { rankInputs, rankOutput, word, wordOutput } from './types/assessment.type';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
@@ -17,7 +17,7 @@ export class AssessmentService {
     return this.httpClient.get<wordOutput>(this.baseUrl + '/words')
   }
 
-  rank(score: number): Observable<rankOutput | string> {
+  rank(score: rankInputs): Observable<rankOutput | string> {
     return this.httpClient.post<rankOutput | string>(this.baseUrl + '/rank', score)
   }
 }
