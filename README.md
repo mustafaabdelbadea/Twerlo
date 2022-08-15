@@ -42,6 +42,7 @@ Our application is a NodeJS application that relies upon some 3rd Party npm pack
 * Run the server
 
     ```
+    npm run prepare
     npm run dev
     ```
 * Browse to the application at Port(8080) [http://localhost:8080]
@@ -103,7 +104,21 @@ Our application is a NodeJS application that relies upon some 3rd Party npm pack
     npm run test
     ```
 
+## PreCommit 
+- Husky hooks used to check all tests before commit 
+- By running the command you install husky 
+- Every time edit husky file must run **npm run prepare** With your platform
+### For linux
+ * Run 
+ ```
+ npm run prepare-linux
+ ```
 
+### For windows
+ * Run 
+ ```
+ npm run prepare-windows
+ ``` 
 
 ## Endpoints Rest apis
 

@@ -8,7 +8,8 @@
     "dev": "ts-node-dev --respawn -r dotenv/config src dotenv_config_path=.env.development",
     "docker-run": "docker volume prune -f && docker-compose up --build server",
     "docker-run-full": "docker volume prune -f && docker-compose up --build",
-    "prepare": " cd ../../ && husky install"
+    "prepare-windows": "cd ../../ && husky install",
+    "husky-linux": "cd ../../ && husky install && chmod 777 .husky/*"
   },
   "author": "mustafa.abdelbadea@gmail.com",
   "license": "ISC",
