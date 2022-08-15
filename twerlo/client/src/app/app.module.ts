@@ -18,12 +18,16 @@ import {MessageModule} from 'primeng/message';
 import {ChartModule} from 'primeng/chart';
 import {ButtonModule} from 'primeng/button';
 import {ToastModule} from 'primeng/toast';
+import { RankCardComponent } from './pages/components/rank-card/rank-card.component';
+import { ScoreCardComponent } from './pages/components/score-card/score-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PracticeComponent,
     RankComponent,
+    RankCardComponent,
+    ScoreCardComponent,
   ],
   imports: [
     BrowserModule,

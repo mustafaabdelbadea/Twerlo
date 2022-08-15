@@ -1,0 +1,5 @@
+.card-green {
+    background: linear-gradient(90deg, rgba(3,135,91,1) 35%, rgba(148,224,0,1) 100%);
+    box-shadow: 0 5px 20px rgba(32, 172, 207, 0.3);
+    border: none;
+  }

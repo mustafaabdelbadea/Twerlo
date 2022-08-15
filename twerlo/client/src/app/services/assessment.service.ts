@@ -17,7 +17,7 @@ export class AssessmentService {
     return this.httpClient.get<wordOutput>(this.baseUrl + '/words')
   }
 
-  rank(score: rankInputs): Observable<rankOutput | string> {
-    return this.httpClient.post<rankOutput | string>(this.baseUrl + '/rank', score)
+  rank(score: rankInputs): Observable<rankOutput> {
+    return this.httpClient.post<rankOutput>(this.baseUrl + '/rank', score)
   }
 }

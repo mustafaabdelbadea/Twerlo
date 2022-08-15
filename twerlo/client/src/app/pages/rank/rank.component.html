@@ -1,21 +1,36 @@
-
 <div class="page-container">
   <div class="container pt-5">
     <p-card>
-      <ng-template pTemplate="header" >
+      <ng-template pTemplate="header">
         <div class="d-flex justify-content-between p-4">
           <div>
             <h4>Rank</h4>
           </div>
           <div>
-            <button pButton pRipple type="button" label="Try Again" class="p-button-outlined p-button-secondary" routerLink="/practice"></button>
+            <button pButton pRipple type="button" label="Try Again" class="p-button-outlined p-button-secondary"
+              routerLink="/practice"></button>
           </div>
         </div>
       </ng-template>
-      <div class="d-flex justify-content-center">
-        <p-chart type="pie" [data]="data" [options]="chartOptions"></p-chart>
+      <div class="row justify-content-evenly align-items-center" style="color: white;">
+        <div class="col-4">
+          <app-score-card [score]="score"></app-score-card>
+        </div>
+        <div class="col-4">
+          <app-rank-card [rank]="rank"></app-rank-card>
+        </div>
+
+        <div class="col-2">
+          <div>
+            <p style="color: black;"> Your rank is <strong>
+              {{rank}} %
+            </strong> </p>
+            <p-chart type="pie" [data]="data" [options]="chartOptions"></p-chart>
+          </div>
+    
+        </div>
       </div>
-</p-card>
+    </p-card>
   </div>
 </div>
 

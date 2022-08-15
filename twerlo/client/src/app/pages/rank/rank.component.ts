@@ -11,6 +11,7 @@ import { MessageService } from 'primeng/api';
 })
 export class RankComponent implements OnInit {
   data: any;
+
   public chartOptions = {
     responsive: true,
     plugins: {
@@ -19,13 +20,17 @@ export class RankComponent implements OnInit {
       },
     },
   };
+
+  score: number = 0;
+
+  rank!: number;
   constructor(
     private route: ActivatedRoute,
     private assessmentService: AssessmentService,
     private messageService: MessageService,
     private router: Router
   ) {}
-  score: number = 0;
+  
   ngOnInit(): void {
     this.route.params.subscribe(({ score }) => {
       this.score = score;
@@ -37,22 +42,24 @@ export class RankComponent implements OnInit {
 
     this.assessmentService.rank(inputs).subscribe(
       (output) => {
-        console.log(output);
+        this.rank = output.rank;
+        
+        this.data = {
+          labels: ['My rank', 'Others'],
+          datasets: [
+            {
+              data: [this.rank, 100 - this.rank],
+              backgroundColor: ['#42A5F5', '#66BB6A'],
+              hoverBackgroundColor: ['#64B5F6', '#81C784'],
+            },
+          ],
+        };
       },
       (error) => {
         this.messageService.add({ severity: 'error', summary: error.message });
       }
     );
 
-    this.data = {
-      labels: ['My rank', 'Others'],
-      datasets: [
-        {
-          data: [300, 50, 100],
-          backgroundColor: ['#42A5F5', '#66BB6A'],
-          hoverBackgroundColor: ['#64B5F6', '#81C784'],
-        },
-      ],
-    };
+   
   }
 }
