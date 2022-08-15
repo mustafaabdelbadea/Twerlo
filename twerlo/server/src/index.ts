@@ -19,4 +19,14 @@ async function start() {
     }
 }
 
+ export async function stop() {
+    try{
+        await boot.stop()
+    } catch(error) {
+        console.log("APP ERROR");
+        console.trace(error);  
+    }
+
+}
+
 start()

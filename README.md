@@ -92,6 +92,19 @@ Our application is a NodeJS application that relies upon some 3rd Party npm pack
     npm run docker-run-full
     ```
 
+## Testing
+
+ - Mocha testing for test server apis
+ - Make sure there is .env.test file
+
+ * Test 
+    ```
+    cd server
+    npm run test
+    ```
+
+
+
 ## Endpoints Rest apis
 
 * Visit
