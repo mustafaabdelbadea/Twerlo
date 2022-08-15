@@ -92,3 +92,17 @@ Our application is a NodeJS application that relies upon some 3rd Party npm pack
     npm run docker-run-full
     ```
 
+## Endpoints Rest apis
+
+* Visit
+     ```
+    localhost:8080/v1/api-docs
+     ```
+<img src="assets/images/swagger.png" alt="swagger" width="400"/>
+
+
+## How to use
+
+    * Choose the right answer from the list
+    * After compelete choosing click next to get Rank and Score
+    * You can try again by clicking on try again button in the rank page
