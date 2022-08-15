@@ -23,7 +23,7 @@ export async function stop() {
   try {
     if(server) {
       await server.close();
-      console.log('main > boot > server > main > stopped.');
+      console.log(clc.red.bold('main > boot > server > main > stopped.'));
     }
   } catch (error) {
     console.log(error)
