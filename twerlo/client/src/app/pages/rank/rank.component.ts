@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-rank',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RankComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private route: ActivatedRoute) { }
+  score: number = 0;
   ngOnInit(): void {
+    this.route.params.subscribe(({ score }) => {
+      this.score = score;
+    });
   }
 
 }

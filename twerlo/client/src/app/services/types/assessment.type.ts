@@ -8,6 +8,12 @@ export interface word {
   pos: string
 }
 
+export interface CheckedWord extends word {
+  checked: boolean
+  correct: boolean
+
+}
+
 
 export interface rankOutput {
   rank: number

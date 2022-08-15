@@ -1,8 +1,32 @@
 
-<div class="container my-5">
-  <p-card header="Words">
-    <div class="container">
-      <p-checkbox name="groupname" value="val1" ></p-checkbox>
-    </div>
-  </p-card>
+<div class="page-container">
+  <div class="container pt-5">
+    <p-card header="Practice">
+      <div class="container">
+        <div>
+          <p-progressBar [value]="value"></p-progressBar>
+        </div>
+        <div class="my-2">
+          <p-accordion>
+            <p-accordionTab header="Question {{ i+1 }}" [selected]="true" *ngFor="let word of words; let i = index" >
+              <h5>{{word.word | titlecase}}</h5>
+              <div *ngFor="let p of pos" class="field-checkbox">
+                <p-radioButton (onClick)="getSelectedValue(p,word)" [inputId]="p" name="category" [value]="p" [(ngModel)]="word.checked" [disabled]="word.checked"></p-radioButton>
+                <label class="mx-1">{{p}}</label>
+            </div>
+            <p-messages *ngIf="word.checked" [severity]="word.correct ? 'success' : 'error' ">
+              <ng-template pTemplate>
+                  <div class="ml-2">{{word.correct ? 'Correct answer' : 'Incorrect answer'}}</div>
+              </ng-template>
+          </p-messages>
+            </p-accordionTab>
+        </p-accordion>
+        </div>
+
+        <div class="text-end">
+          <button pButton pRipple [disabled]="value != 100" (click)="next()" type="button" label="Primary"></button>
+        </div>
+      </div>
+    </p-card>
+  </div>
 </div>

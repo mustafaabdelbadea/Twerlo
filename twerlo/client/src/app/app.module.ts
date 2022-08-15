@@ -10,15 +10,19 @@ import {CardModule} from 'primeng/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
-import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import {CheckboxModule} from 'primeng/checkbox';
+import {ProgressBarModule} from 'primeng/progressbar';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
+import {ChartModule} from 'primeng/chart';
+import {ButtonModule} from 'primeng/button';
 
 @NgModule({
   declarations: [
     AppComponent,
     PracticeComponent,
-    RankComponent
+    RankComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,12 @@ import {CheckboxModule} from 'primeng/checkbox';
     CheckboxModule,
     AccordionModule,
     RadioButtonModule,
-    CardModule
+    CardModule,
+    ProgressBarModule,
+    MessageModule,
+    MessagesModule,
+    ChartModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
