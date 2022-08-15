@@ -1,0 +1,7 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# If any command fails, exit immediately with that command's exit status
+# set -eo pipefail
+cd twerlo/server
+npm run test

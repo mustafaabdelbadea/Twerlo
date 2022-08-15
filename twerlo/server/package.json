@@ -7,13 +7,15 @@
     "test": "ts-mocha --exit -r tests/helpers/healper.ts -r dotenv/config 'tests/test/**/*.test.ts' dotenv_config_path=.env.test",
     "dev": "ts-node-dev --respawn -r dotenv/config src dotenv_config_path=.env.development",
     "docker-run": "docker volume prune -f && docker-compose up --build server",
-    "docker-run-full": "docker volume prune -f && docker-compose up --build"
+    "docker-run-full": "docker volume prune -f && docker-compose up --build",
+    "prepare": " cd ../../ && husky install"
   },
   "author": "mustafa.abdelbadea@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "@types/mocha": "^9.1.1",
     "@types/node": "^18.7.3",
+    "husky": "^8.0.1",
     "typescript": "^4.7.4"
   },
   "dependencies": {
