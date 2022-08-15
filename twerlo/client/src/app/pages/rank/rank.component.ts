@@ -11,6 +11,14 @@ import { MessageService } from 'primeng/api';
 })
 export class RankComponent implements OnInit {
   data: any;
+  public chartOptions = {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+  };
   constructor(
     private route: ActivatedRoute,
     private assessmentService: AssessmentService,
