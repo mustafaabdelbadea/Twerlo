@@ -7,32 +7,37 @@ export interface word {
 }
 class TestController {
   getWords() {
+    const DataWord = [...dataFile.wordList]
     const wordMap = new Map<string, number[]>();
     const newWordList: word[] = [];
 
     // Add word pos as unique key in map 
-    dataFile.wordList.forEach((word: word, index: number) => {
+    DataWord.forEach((word: word, index: number) => {
       const isExists = wordMap.get(word.pos);
 
-      if (isExists) {
+      if (isExists) {        
         wordMap.get(word.pos).push(index);
       } else {
         wordMap.set(word.pos, [index]);
       }
     });
-
+    
     wordMap.forEach((val) => {
       const rand = Math.floor(Math.random() * val.length);
-      newWordList.push(dataFile.wordList[val[rand]]);
-      delete dataFile.wordList[val[rand]];
+      if(DataWord[val[rand]]) {
+        newWordList.push(DataWord[val[rand]]);
+        DataWord.splice(val[rand], 1)
+      }
     });
 
     const questionNumber = 10;
 
     while (newWordList.length != questionNumber) {
-      const rand = Math.floor(Math.random() * dataFile.wordList.length);
-      newWordList.push(dataFile.wordList[rand]);
-      delete dataFile.wordList[rand];
+      const rand = Math.floor(Math.random() * DataWord.length);
+      if(DataWord[rand]) {
+        newWordList.push(DataWord[rand]);
+        DataWord.splice(rand, 1)
+      }
     }
 
     return {
@@ -40,7 +45,7 @@ class TestController {
     }
   }
 
-  calculateRank(score) {
+  calculateRank(score: number) {
     let points = 0;
     dataFile.scoresList.forEach((s) => {
       if (s < score) {
