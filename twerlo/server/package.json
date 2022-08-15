@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node-dev --respawn -r dotenv/config src dotenv_config_path=.env.development",
-    "docker-run": "docker volume prune -f && docker-compose up --build serer"
+    "docker-run": "docker volume prune -f && docker-compose up --build server",
+    "docker-run-full": "docker volume prune -f && docker-compose up --build"
   },
   "author": "mustafa.abdelbadea@gmail.com",
   "license": "ISC",
