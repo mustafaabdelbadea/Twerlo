@@ -1,4 +1,6 @@
+import { AssessmentService } from './../../services/assessment.service';
 import { Component, OnInit } from '@angular/core';
+import { word } from 'src/app/services/types/assessment.type';
 
 @Component({
   selector: 'app-practice',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./practice.component.css']
 })
 export class PracticeComponent implements OnInit {
-
-  constructor() { }
+  words: word[] = []
+  constructor(private assessmentService: AssessmentService) { }
 
   ngOnInit(): void {
+    this.assessmentService.getWords().subscribe((output) => {
+      this.words = output.words
+    })
+
   }
 
 }

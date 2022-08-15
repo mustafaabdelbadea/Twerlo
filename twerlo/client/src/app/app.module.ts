@@ -7,6 +7,12 @@ import { RankComponent } from './pages/rank/rank.component';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import {AccordionModule} from 'primeng/accordion';
 import {CardModule} from 'primeng/card';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AppRoutingModule } from './app-routing.module';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import {CheckboxModule} from 'primeng/checkbox';
 
 @NgModule({
   declarations: [
@@ -16,6 +22,12 @@ import {CardModule} from 'primeng/card';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    AppRoutingModule,
+    CheckboxModule,
     AccordionModule,
     RadioButtonModule,
     CardModule
