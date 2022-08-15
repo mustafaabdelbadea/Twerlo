@@ -3,6 +3,33 @@ tags:
   description: The test api
 
 paths: 
+  /v1/words:
+    get:
+      description: To get the array of words
+      tags: [Test]
+      responses:
+        200:
+          description: return words
+          content: 
+            application/json:
+              schema:
+                type: object
+                properties:
+                  words:
+                    type: object
+                    properties:
+                      id:
+                        type: number
+                      word: 
+                        type: string
+                      pos: 
+                        type: string
+
+        400:
+          description: No score provided, bad request
+          content: 
+            application/text
+
   /v1/rank:
     post:
       description: To get the rank
